@@ -1,25 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Link
+} from "react-router-dom";
+
+import "./App.css";
+import 'antd/dist/antd.css';
+
+import Test from "./routes/Test";
+import LinearRegression from "./routes/LinearRegression";
+import HeightWeight from "./routes/HeightWeight";
+
+export const routesList = [
+  {
+    path: '*',
+    element: <Navigate to="/" />
+  },
+  {
+    path: '/',
+    element: (
+      <ul>
+        {['test', 'linear-regression', 'height-weight'].map((path, index) => {
+          return (
+            <li key={index}>
+              <Link to={path}>{path}</Link>
+            </li>
+          )
+        })}
+      </ul>
+    )
+  },
+  {
+    path: 'test',
+    element: <Test />
+  },
+  {
+    path: 'linear-regression',
+    element: <LinearRegression />
+  },
+  {
+    path: 'height-weight',
+    element: <HeightWeight />
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {routesList.map(({ path, element }) => 
+          <Route path={path} element={element} key={`routes_${path}`} />
+        )}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
