@@ -3,6 +3,8 @@ import { InputNumber } from "antd";
 import * as tf from "@tensorflow/tfjs";
 import * as tfvis from "@tensorflow/tfjs-vis";
 
+import CommonContent from "../../components/CommonContent";
+
 const LinearRegression:FunctionComponent<{}> = () => {
   const [inputValue, setInputValue] = useState(0);
   const [predictValue, setPredictValue] = useState(0);
@@ -53,17 +55,13 @@ const LinearRegression:FunctionComponent<{}> = () => {
 
   useEffect(() => {
     const predictValue = (model.current.predict(tf.tensor([inputValue])));
-    console.log(predictValue)
     // @ts-ignore
     setPredictValue(predictValue.dataSync());
   }, [inputValue]);
   
 
   return (
-    <div>
-      <h1>
-        线性回归训练集
-      </h1>
+    <CommonContent title="线性回归训练集">
       <div>
         <span>
           输入：
@@ -79,7 +77,7 @@ const LinearRegression:FunctionComponent<{}> = () => {
           {`预测： ${predictValue}`}
         </span>
       </div>
-    </div>
+    </CommonContent>
   );
 }
 
