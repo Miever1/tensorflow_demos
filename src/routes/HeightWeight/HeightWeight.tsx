@@ -76,9 +76,7 @@ const HeightWeight:FunctionComponent<{}> = () => {
         <span>cm</span>
       </div>
       <div>
-        <span>
-          {`体重预测： ${predictValue}kg`}
-        </span>
+        {!training && `体重预测： ${predictValue}kg`}
       </div>
     </CommonContent>
   );
