@@ -10,9 +10,25 @@ import {
 import "./App.css";
 import 'antd/dist/antd.css';
 
-import Test from "./routes/Test";
+import Introduce from "./routes/Introduce";
 import LinearRegression from "./routes/LinearRegression";
 import HeightWeight from "./routes/HeightWeight";
+import LogicRegression from "./routes/LogicRegression";
+import XOR from "./routes/XOR";
+import Iris from "./routes/Iris";
+import Overfit from "./routes/Overfit";
+import MNist from "./routes/MNist";
+
+const funLists = [
+  'introduce',
+  'linear-regression',
+  'height-weight',
+  'logic-regression',
+  'XOR',
+  'iris',
+  'overfit',
+  'mnist'
+];
 
 export const routesList = [
   {
@@ -34,8 +50,8 @@ export const routesList = [
     )
   },
   {
-    path: 'test',
-    element: <Test />
+    path: funLists[0],
+    element: <Introduce />
   },
   {
     path: 'linear-regression',
@@ -45,6 +61,26 @@ export const routesList = [
     path: 'height-weight',
     element: <HeightWeight />
   },
+  {
+    path: funLists[3],
+    element: <LogicRegression />
+  },
+  {
+    path: funLists[4],
+    element: <XOR />
+  },
+  {
+    path: funLists[5],
+    element: <Iris />
+  },
+  {
+    path: funLists[6],
+    element: <Overfit />
+  },
+  {
+    path: funLists[7],
+    element: <MNist />
+  }
 ];
 
 function App() {

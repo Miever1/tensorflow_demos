@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 
-const Test:FunctionComponent<{}> = (): JSX.Element => {
+const Introduce:FunctionComponent<{}> = (): JSX.Element => {
   // rankType 代表维度,几维数组
   // shape 数组结构
   // size 里面有多少个数值
@@ -33,9 +33,8 @@ const Test:FunctionComponent<{}> = (): JSX.Element => {
 
   return (
     <div>
-      123
     </div>
   );
 }
 
-export default Test;
+export default Introduce;
