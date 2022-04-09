@@ -3,6 +3,8 @@ import { InputNumber } from "antd";
 import * as tf from "@tensorflow/tfjs";
 import * as tfvis from "@tensorflow/tfjs-vis";
 
+import CommonContent from "../../components/CommonContent";
+
 const HeightWeight:FunctionComponent<{}> = () => {
   const [inputValue, setInputValue] = useState(0);
   const [predictValue, setPredictValue] = useState(0);
@@ -61,10 +63,7 @@ const HeightWeight:FunctionComponent<{}> = () => {
   
 
   return (
-    <div>
-      <h1>
-        身高体重训练数据
-      </h1>
+    <CommonContent title="身高体重训练数据">
       <div>
         <span>
           输入身高：
@@ -77,11 +76,9 @@ const HeightWeight:FunctionComponent<{}> = () => {
         <span>cm</span>
       </div>
       <div>
-        <span>
-          {`体重预测： ${predictValue}kg`}
-        </span>
+        {!training && `体重预测： ${predictValue}kg`}
       </div>
-    </div>
+    </CommonContent>
   );
 }
 

@@ -39,7 +39,7 @@ export const routesList = [
     path: '/',
     element: (
       <ul>
-        {['test', 'linear-regression', 'height-weight'].map((path, index) => {
+        {funLists.map((path, index) => {
           return (
             <li key={index}>
               <Link to={path}>{path}</Link>
@@ -54,11 +54,11 @@ export const routesList = [
     element: <Introduce />
   },
   {
-    path: 'linear-regression',
+    path: funLists[1],
     element: <LinearRegression />
   },
   {
-    path: 'height-weight',
+    path: funLists[2],
     element: <HeightWeight />
   },
   {

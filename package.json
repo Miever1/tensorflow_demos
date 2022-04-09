@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@tensorflow/tfjs": "^3.14.0",
     "@tensorflow/tfjs-vis": "^1.5.1",
     "@testing-library/jest-dom": "^5.16.2",
