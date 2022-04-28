@@ -12,6 +12,7 @@ const MNist:FunctionComponent<{}> = () => {
     if (canvasRef.current) {
         canvasRef.current.height = 300;
         canvasRef.current.width = 300;
+        // @ts-ignore
         canvasRef.current.style = "border: 2px solid #666;";
     }
     const [training, setTraining] = useState(true);
@@ -30,7 +31,9 @@ const MNist:FunctionComponent<{}> = () => {
             const canvas = document.createElement('canvas');
             canvas.height = 28;
             canvas.width = 28;
+            // @ts-ignore
             canvas.style = "margin: 4px;";
+            // @ts-ignore
             await tf.browser.toPixels(imageTensor, canvas);
             surface.drawArea.appendChild(canvas);
         }
@@ -140,8 +143,10 @@ const MNist:FunctionComponent<{}> = () => {
         canvasRef.current?.addEventListener('mousemove', e => {
             if (e.buttons === 1) {
                 const ctx = canvasRef.current?.getContext('2d');
-                ctx.fillStyle = 'rgb(255, 255, 255)';
-                ctx?.fillRect(e.offsetX, e.offsetY, 18, 18);
+                if (ctx) {
+                    ctx.fillStyle = 'rgb(255, 255, 255)';
+                    ctx.fillRect(e.offsetX, e.offsetY, 18, 18);
+                }
             }
         });
         return () => {

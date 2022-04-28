@@ -18,6 +18,7 @@ import XOR from "./routes/XOR";
 import Iris from "./routes/Iris";
 import Overfit from "./routes/Overfit";
 import MNist from "./routes/MNist";
+import MobileNet from "./routes/MobileNet";
 
 const funLists = [
   'introduce',
@@ -27,7 +28,8 @@ const funLists = [
   'XOR',
   'iris',
   'overfit',
-  'mnist'
+  'mnist',
+  'mobile-net'
 ];
 
 export const routesList = [
@@ -80,6 +82,10 @@ export const routesList = [
   {
     path: funLists[7],
     element: <MNist />
+  },
+  {
+    path: funLists[8],
+    element: <MobileNet />
   }
 ];
 
