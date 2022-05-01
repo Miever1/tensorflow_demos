@@ -7,9 +7,9 @@ import CommonContent from "../../components/CommonContent";
 
 const MOBILENET_MODEL_PATH = 'http://127.0.0.1:8080/mobilenet/web_model/model.json';
 
-const fileToImg = (file: Blob) => {
+export const fileToImg = (file: Blob) => {
     return new Promise(resolve => {
-        const reader = new FileReader;
+        const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = (e) => {
             const img = document.createElement('img');
