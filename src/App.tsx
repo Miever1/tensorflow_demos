@@ -7,8 +7,7 @@ import {
   Link
 } from "react-router-dom";
 
-import "./App.css";
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 
 import Introduce from "./routes/Introduce";
 import LinearRegression from "./routes/LinearRegression";
@@ -19,6 +18,7 @@ import Iris from "./routes/Iris";
 import Overfit from "./routes/Overfit";
 import MNist from "./routes/MNist";
 import MobileNet from "./routes/MobileNet";
+import Brand from "./routes/Brand";
 
 const funLists = [
   'introduce',
@@ -29,7 +29,8 @@ const funLists = [
   'iris',
   'overfit',
   'mnist',
-  'mobile-net'
+  'mobile-net',
+  'brand'
 ];
 
 export const routesList = [
@@ -86,6 +87,10 @@ export const routesList = [
   {
     path: funLists[8],
     element: <MobileNet />
+  },
+  {
+    path: funLists[9],
+    element: <Brand />
   }
 ];
 

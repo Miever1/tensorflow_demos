@@ -23,7 +23,7 @@ const MNist:FunctionComponent<{}> = () => {
         const examples = data.nextTestBatch(20);
         const surface = tfvis.visor().surface({
             name: "输入示例"
-        })
+        });
         for (let i = 0; i < 20; i += 1) {
             const imageTensor = tf.tidy(() =>
                 examples.xs.slice([i, 0], [1, 784]).reshape([28, 28, 1])
@@ -153,7 +153,6 @@ const MNist:FunctionComponent<{}> = () => {
             tfvis.visor().close();
         }
     }, []);
-
 
     return (
         <CommonContent title="mnist 训练集,手写数字预测">
