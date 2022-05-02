@@ -52,7 +52,7 @@ const Iris:FunctionComponent<{}> = () => {
         return () => {
             tfvis.visor().close();
         }
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         const [x, y, z, q] = inputValue.split(",");
