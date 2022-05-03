@@ -85,7 +85,7 @@
      });
  
      const labelsRequest = fetch(MNIST_LABELS_PATH);
-     const [imgResponse, labelsResponse] =
+     const [, labelsResponse] =
          await Promise.all([imgRequest, labelsRequest]);
  
      this.datasetLabels = new Uint8Array(await labelsResponse.arrayBuffer());
@@ -141,6 +141,6 @@
      const xs = tf.tensor2d(batchImagesArray, [batchSize, IMAGE_SIZE]);
      const labels = tf.tensor2d(batchLabelsArray, [batchSize, NUM_CLASSES]);
  
-     return {xs, labels};
+     return { xs, labels };
    }
  }

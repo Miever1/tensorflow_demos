@@ -29,7 +29,7 @@ const Introduce:FunctionComponent<{}> = (): JSX.Element => {
     getData();
     console.log(output, 'for loop');
     console.log(tensor, 'tensor')
-  },[]);
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

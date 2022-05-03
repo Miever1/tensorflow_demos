@@ -118,7 +118,7 @@ const MNist:FunctionComponent<{}> = () => {
             ctx.fillStyle = 'rgb(0, 0, 0)';
             ctx.fillRect(0, 0, 300, 300);
         }
-    },[])
+    },[]);
 
     const predict = useCallback(() => {
         const input = tf.tidy(() => {
@@ -152,7 +152,7 @@ const MNist:FunctionComponent<{}> = () => {
         return () => {
             tfvis.visor().close();
         }
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <CommonContent title="mnist 训练集,手写数字预测">

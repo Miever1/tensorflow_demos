@@ -19,6 +19,7 @@ import Overfit from "./routes/Overfit";
 import MNist from "./routes/MNist";
 import MobileNet from "./routes/MobileNet";
 import Brand from "./routes/Brand";
+import Speech from "./routes/Speech";
 
 const funLists = [
   'introduce',
@@ -30,7 +31,8 @@ const funLists = [
   'overfit',
   'mnist',
   'mobile-net',
-  'brand'
+  'brand',
+  'speech'
 ];
 
 export const routesList = [
@@ -91,6 +93,10 @@ export const routesList = [
   {
     path: funLists[9],
     element: <Brand />
+  },
+  {
+    path: funLists[10],
+    element: <Speech />
   }
 ];
 

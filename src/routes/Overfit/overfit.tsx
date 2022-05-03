@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useRef, useEffect, useState } from "react";
+import React, { FunctionComponent, useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as tfvis from "@tensorflow/tfjs-vis";
 
@@ -52,7 +52,7 @@ const Overfit:FunctionComponent<{}> = () => {
         return () => {
             tfvis.visor().close();
         }
-    }, []);
+    }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <CommonContent title="欠拟合训练集">
