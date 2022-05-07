@@ -20,6 +20,7 @@ import MNist from "./routes/MNist";
 import MobileNet from "./routes/MobileNet";
 import Brand from "./routes/Brand";
 import Speech from "./routes/Speech";
+import SpeechCn from "./routes/SpeechCn";
 
 const funLists = [
   'introduce',
@@ -32,7 +33,8 @@ const funLists = [
   'mnist',
   'mobile-net',
   'brand',
-  'speech'
+  'speech',
+  'speech-cn'
 ];
 
 export const routesList = [
@@ -97,6 +99,10 @@ export const routesList = [
   {
     path: funLists[10],
     element: <Speech />
+  },
+  {
+    path: funLists[11],
+    element: <SpeechCn />
   }
 ];
 
